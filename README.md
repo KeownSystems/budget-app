@@ -10,3 +10,5 @@ Enter each person's income, rent, other bills, and a savings goal. The app subtr
 2. Run `npm start`.
 
 The calculator runs in your browser and does not save entries. Displayed amounts are rounded to cents.
+
+[Try the live calculator](https://couples-budget-app.netlify.app/)
