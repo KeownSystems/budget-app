@@ -41,9 +41,7 @@ class BudgetForm extends Component {
         let totalDue = parseFloat(this.state.rent) + parseFloat(this.state.otherBills) + parseFloat(this.state.savingsGoal);
         totalDue = totalDue.toFixed(2);
         let spouse1Percentage = parseFloat(this.state.income1) / totalIncome;
-        spouse1Percentage = spouse1Percentage.toFixed(2);
         let spouse2Percentage = parseFloat(this.state.income2) / totalIncome;
-        spouse2Percentage = spouse2Percentage.toFixed(2);
         let leftOver = parseFloat(totalIncome) - parseFloat(totalDue);
         leftOver = leftOver.toFixed(2);
 
@@ -96,62 +94,3 @@ class BudgetForm extends Component {
                                 <Label for='income2'>
                                     Spouse 2 Income:
                                     <Input type = 'number' min='0.01' step='0.01' name ='income2'
-                                        value = {this.state.income2}
-                                        onChange = {this.handleChange}
-                                    />
-                                </Label>
-                            </div>
-                            <div className='app__form-item'>
-                                <Label for='rent'>
-                                    Rent:
-                                    <Input type = 'number' min='0.01' step='0.01' name ='rent'
-                                        value = {this.state.rent}
-                                        onChange = {this.handleChange}
-                                    />
-                                </Label>
-                            </div>
-                            <div className='app__form-item'>
-                                <Label for='otherBills'>
-                                    Other Bills:
-                                    <Input type = 'number' min='0.01' step='0.01' name ='otherBills'
-                                        value = {this.state.otherBills}
-                                        onChange = {this.handleChange}
-                                    />
-                                </Label>
-                            </div>
-                            <div className='app__form-item'>
-                                <Label for='savingsGoal'>
-                                    Savings Goal:
-                                    <Input type = 'number' min='0.01' step='0.01' name ='savingsGoal'
-                                        value = {this.state.savingsGoal}
-                                        onChange = {this.handleChange}
-                                    />
-                                </Label>
-                            </div>
-                            <div className='app__form-button'>
-                                <Button type='button' onClick={this.handleSubmit}>
-                                    Submit
-                                </Button>
-                            </div>
-                        </Form>
-                        <div className='p-text'>
-                            Total Income: {this.state.totalIncome}
-                        </div>
-                        <div className='p-text'>
-                            Savings Account Deposit: {this.state.savingsGoal}
-                        </div>
-                        <div className='p-text'>
-                            {this.state.spouse1Name}'s Account Despost: {this.state.spouse1AcctDeposit}
-                        </div>
-                        <div className='p-text'>
-                            {this.state.spouse2Name}'s Account Despost: {this.state.spouse2AcctDeposit}
-                        </div>
-                    </div>
-                </div>
-            </>
-            
-        )
-    }
-}
-
-export default BudgetForm
